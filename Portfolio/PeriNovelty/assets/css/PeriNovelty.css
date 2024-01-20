@@ -1,0 +1,77 @@
+.logo {
+}
+.OverLay_White {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#header.transparent #topMain.nav-pills > li > a {
+    color: #b2852d !important;
+}
+#topMain.nav-pills > li > a.dropdown-toggle:after {
+    color: #664605 !important;
+}
+#header.transparent ul.nav-second-main li a, #header.transparent ul.nav-second-main li a > i, #header.color ul.nav-second-main li a, #header.color ul.nav-second-main li a > i, #header.dark ul.nav-second-main li a, #header.dark ul.nav-second-main li a > i {
+    color: #919191 !important;
+}
+.badge-WhiteGold {
+    background: #c28d24 !important;
+}
+.fontSize-30 {
+    font-size: 30px !important;
+}
+.text-color-PeriGold {
+    color: #b2852d !important
+}
+.text-uppercase {
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+}
+.hero-text {
+    font-size: 7rem !important;
+}
+.copyright {
+    background-color: white !important;
+    color: #999 !important;
+}
+section.page-header .breadcrumb a:hover {
+    color: darkgoldenrod !important;
+}
+
+#footer a {
+    color: #999 !important;
+}
+.margin-top-10 {
+    margin-top: 10px !important;
+}
+.margin-top-20 {
+    margin-top: 20px !important;
+}
+.margin-top-30 {
+    margin-top: 30px !important;
+}
+.margin-top-50 {
+    margin-top: 50px !important;
+}
+.margin-right-10 {
+    margin-right:10px !important;
+}
+.margin-left-10 {
+    margin-left: 10px !important;
+}
+.TransparentBox {
+    display: block;
+    border: 1px solid #ccc;
+    background-color: rgba(253, 246, 248, 0.5);
+    text-align: center;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    min-height: 40px;
+    color: #b2852d !important;
+}
+#progressBar #bar {
+    background-color: #ac811b;
+}
+.BG_Color_Gold {
+    background-color : #c28d24 !important;
+}
