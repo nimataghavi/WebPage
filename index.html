@@ -560,14 +560,11 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </section><!-- End Contact Section -->
 
     <div class="credits">
-        <img src="assets/img/QR-Code.png" style="width:110px" />
-        <br />
+        <div id="qrcode"></div>
         &copy; <a href="http://www.nima-taghavi.com">S.Nima Taghavi</a>
     </div>
 
@@ -583,7 +580,48 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/qr-code-styling.js"></script>
+    <script type="text/javascript">
+        const options = {
+            width: 150,
+            height: 150,
+            type: "svg",
+            data: "http://www.nima-taghavi.com", 
 
+            dotsOptions: {
+                color: "#FFF",
+                type: "rounded"
+            },
+
+            cornersSquareOptions: {
+                color: "#18d26e",
+                type: "extra-rounded"
+            },
+            
+            cornersDotOptions: {
+                color: "#18d26e",
+            },
+
+            backgroundOptions: {
+                color: "#000",
+            },
+            image: "https://nima-taghavi.com/favicon.ico",
+            imageOptions: {
+                crossOrigin: "anonymous",
+                margin: 5,
+                imageSize: 0.2,
+                saveAsBlob: true,
+                hideBackgroundDots: true,
+            }
+        };
+
+        const qrCode = new QRCodeStyling(options);
+
+        window.onload = function() {
+            const containerElement = document.getElementById("qrcode");
+            qrCode.append(containerElement);
+        };
+    </script>
 </body>
 
 </html>

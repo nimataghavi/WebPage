@@ -457,6 +457,7 @@ section .container {
 
 .skills .progress-bar-wrap {
   background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
 }
 
 .skills .progress-bar {
@@ -464,6 +465,7 @@ section .container {
   height: 10px;
   transition: .9s;
   background-color: #18d26e;
+  border-radius: 4px;
 }
 
 /*--------------------------------------------------------------
@@ -1067,6 +1069,7 @@ section .container {
   font-size: 13px;
   color: #fff;
   z-index: 1;
+  text-align: center;
 }
 
 .credits a {
@@ -1087,4 +1090,11 @@ section .container {
     .credits img {
         display: none;
     }
+}
+
+#qrcode {
+    border-radius: 15px; 
+    border: 2px solid #000; 
+    margin-bottom: 5px;
+    overflow: hidden;
 }
