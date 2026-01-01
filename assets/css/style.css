@@ -1083,8 +1083,7 @@ section .container {
 
 @media (max-width: 992px) {
   .credits {
-    right: 0;
-    transform: translateX(-50%);
+    display: none;
   }
 
     .credits img {
