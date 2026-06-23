@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nima Taghavi</title>
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="S. Nima Taghavi – Software Architect & Full Stack Developer" />
+  <meta property="og:description" content="Software Architect, Full Stack .NET / Blazor Developer & IT Manager with 20+ years of experience." />
+  <meta property="og:image" content="https://nima-taghavi.com/assets/img/NimaTaghavi.jpg" />
+  <meta property="og:url" content="https://nima-taghavi.com/card" />
+  <meta property="og:site_name" content="Nima Taghavi" />
+  <meta property="profile:first_name" content="Nima" />
+  <meta property="profile:last_name" content="Taghavi" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="S. Nima Taghavi – Software Architect & Full Stack Developer" />
+  <meta name="twitter:description" content="Software Architect, Full Stack .NET / Blazor Developer & IT Manager." />
+  <meta name="twitter:image" content="https://nima-taghavi.com/assets/img/NimaTaghavi.jpg" />
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Card styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- QR Code Styling -->
+  <script src="../assets/js/qr-code-styling.js"></script>
+</head>
+<body>
+
+<main class="card" role="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="avatar-wrap">
+      <img
+        src="https://nima-taghavi.com/assets/img/NimaTaghavi.jpg"
+        alt="Nima Taghavi profile photo"
+        loading="eager"
+      />
+    </div>
+    <div class="hero-name">Nima Taghavi</div>
+    <div class="hero-title">Software Architect &amp; Full Stack Developer</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <ul class="contact-list">
+
+      <li onclick="copyEmail()">
+        <span class="ico">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        </span>
+        <span class="meta">
+          <span class="label">Email</span>
+          <span class="value">nima.taghavi62@gmail.com</span>
+        </span>
+      </li>
+
+      <li onclick="openLink('https://nima-taghavi.com')">
+        <span class="ico">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </span>
+        <span class="meta">
+          <span class="label">Website</span>
+          <span class="value">nima-taghavi.com</span>
+        </span>
+      </li>
+
+      <li onclick="openLink('https://www.linkedin.com/in/s-nima-taghavi')">
+        <span class="ico">
+          <svg viewBox="0 0 24 24" class="fill-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </span>
+        <span class="meta">
+          <span class="label">LinkedIn</span>
+          <span class="value">s-nima-taghavi</span>
+        </span>
+      </li>
+
+      <li onclick="openLink('https://github.com/nimataghavi/')">
+        <span class="ico">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </span>
+        <span class="meta">
+          <span class="label">GitHub</span>
+          <span class="value">nimataghavi</span>
+        </span>
+      </li>
+
+    </ul>
+
+    <hr class="divider" />
+
+    <div class="qr-section">
+      <div id="qr-canvas"></div>
+      <div class="qr-text">
+        <h3>Scan to visit website</h3>
+        <p>Points to nima-taghavi.com — open in any browser</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="downloadVCard()">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Save Contact
+      </button>
+      <button class="btn btn-secondary" onclick="shareCard()">
+        <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Share Card
+      </button>
+    </div>
+
+  </div>
+</main>
+
+<p class="card-footer">
+  <a href="https://nima-taghavi.com">nima-taghavi.com</a> &nbsp;·&nbsp; © 2025 S. Nima Taghavi
+</p>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

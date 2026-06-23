@@ -1,0 +1,309 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --violet:        #6a3de8;
+  --violet-deep:   #4b28c0;
+  --violet-light:  #ede9fc;
+  --violet-mid:    #9b7ef8;
+  --surface:       #ffffff;
+  --surface-alt:   #f7f5ff;
+  --text-primary:  #1a1228;
+  --text-secondary:#5b5478;
+  --text-muted:    #9891b4;
+  --border:        rgba(106,61,232,0.15);
+  --radius-card:   20px;
+  --radius-btn:    10px;
+  --font:          'Open Sans', sans-serif;
+  --font-heading:  'Raleway', sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background: #0f0d1a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 260px;
+  background: linear-gradient(160deg, #4b28c0 0%, #6a3de8 50%, transparent 100%);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(155,126,248,0.08);
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+/* ── hero band ── */
+.hero {
+  background: linear-gradient(135deg, #4b28c0 0%, #6a3de8 55%, #9b7ef8 100%);
+  padding: 2.5rem 2rem 4.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0; right: 0;
+  height: 50px;
+  background: var(--surface);
+  clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+.avatar-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.1rem;
+}
+
+.avatar-wrap img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.85);
+  display: block;
+}
+
+.hero-name {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.hero-title {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 0.3rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* ── body ── */
+.body {
+  padding: 0 1.75rem 1.75rem;
+}
+
+/* ── contact rows ── */
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.contact-list li:hover {
+  background: var(--violet-light);
+  border-color: rgba(106,61,232,0.35);
+}
+
+.contact-list li .ico {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: var(--violet);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-list li .ico svg {
+  width: 16px; height: 16px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-list li .ico svg.fill-icon {
+  fill: white;
+  stroke: none;
+}
+
+.contact-list li .meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.contact-list li .label {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.contact-list li .value {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ── divider ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.25rem 0;
+}
+
+/* ── QR section ── */
+.qr-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--surface-alt);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+#qr-canvas {
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-text h3 {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.qr-text p {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* ── action buttons ── */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin-top: 1.25rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0.72rem 1rem;
+  border-radius: var(--radius-btn);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--violet);
+  color: white;
+}
+
+.btn-primary:hover { opacity: 0.88; }
+
+.btn-secondary {
+  background: var(--violet-light);
+  color: var(--violet-deep);
+  border: 1px solid rgba(106,61,232,0.2);
+}
+
+.btn-secondary:hover { background: #ddd6fc; }
+
+.btn svg {
+  width: 16px; height: 16px;
+  fill: none; stroke: currentColor;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* ── footer ── */
+.card-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 0.68rem;
+  color: #5b4d8a;
+  margin-top: 1.75rem;
+  padding-bottom: 0.25rem;
+}
+
+.card-footer a {
+  color: #9b7ef8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ── toast ── */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #1a1228;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 99px;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 9999;
+  white-space: nowrap;
+  border: 1px solid rgba(155,126,248,0.3);
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 460px) {
+  body { padding: 1rem 0.75rem; }
+  .hero { padding: 2rem 1.5rem 4rem; }
+  .body { padding: 0 1.25rem 1.5rem; }
+}
