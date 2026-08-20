@@ -35,7 +35,6 @@ function downloadVCard() {
     'FN:S. Nima Taghavi',
     'N:Taghavi;Nima;;S.;',
     'TITLE:Software Architect & Full Stack Developer',
-    'ORG:Ati Sazan Ariayee Lotus',
     'EMAIL;TYPE=INTERNET:nima.taghavi62@gmail.com',
     'URL;TYPE=Website:https://nima-taghavi.com',
     'URL;TYPE=LinkedIn:https://www.linkedin.com/in/s-nima-taghavi',
