@@ -34,12 +34,12 @@ function downloadVCard() {
     'VERSION:3.0',
     'FN:S. Nima Taghavi',
     'N:Taghavi;Nima;;S.;',
-    'TITLE:Software Architect & Full Stack Developer',
+    'TITLE:Software Architect, Product owner & Full Stack Developer',
     'EMAIL;TYPE=INTERNET:nima.taghavi62@gmail.com',
     'URL;TYPE=Website:https://nima-taghavi.com',
     'URL;TYPE=LinkedIn:https://www.linkedin.com/in/s-nima-taghavi',
     'URL;TYPE=GitHub:https://github.com/nimataghavi/',
-    'NOTE:Software Architect\\, Full Stack .NET/Blazor Developer & IT Manager with 20+ years of experience.',
+    'NOTE:Software Architect\\, Product owner, Full Stack .NET/Blazor Developer & IT Manager with 20+ years of experience.',
     'PHOTO;VALUE=URI:https://nima-taghavi.com/assets/img/NimaTaghavi.jpg',
     'END:VCARD'
   ].join('\r\n');
