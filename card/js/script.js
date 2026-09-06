@@ -2,7 +2,7 @@ const qr = new QRCodeStyling({
   width: 100,
   height: 100,
   type: 'svg',
-  data: 'https://nima-taghavi.com',
+  data: 'https://nima-taghavi.com/card',
   dotsOptions:          { color: '#4b28c0', type: 'rounded' },
   cornersSquareOptions: { color: '#6a3de8', type: 'extra-rounded' },
   cornersDotOptions:    { color: '#9b7ef8' },
