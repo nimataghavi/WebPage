@@ -1,0 +1,254 @@
+.lotus-bcard {
+  --lotus-bcard-primary: #6c5ce7;
+  --lotus-bcard-bg: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 3rem 2rem;
+  padding-inline: 1rem;
+  background: var(--lotus-bcard-bg, #fff);
+}
+.lotus-bcard__card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  margin-block-start: 3rem;
+  background: var(--lotus-card-bg, #fff);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.lotus-bcard__photo-wrap {
+  margin-block-start: -6rem;
+  margin-block-end: 1rem;
+}
+.lotus-bcard__photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--lotus-card-bg, #fff);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+.lotus-bcard__photo--initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lotus-bcard-primary, #6c5ce7);
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+.lotus-bcard__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-block-end: 0.25rem;
+}
+.lotus-bcard__tagline {
+  color: var(--lotus-text-muted, #6c757d);
+  margin-block-end: 1.25rem;
+}
+.lotus-bcard__links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-block-end: 1.5rem;
+}
+.lotus-bcard__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: var(--lotus-body-bg, #f5f6fa);
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.lotus-bcard__link:hover {
+  background: color-mix(in srgb, var(--lotus-bcard-primary, #6c5ce7) 12%, var(--lotus-body-bg, #f5f6fa));
+}
+.lotus-bcard__link-icon {
+  flex: 0 0 auto;
+  width: 1.25rem;
+  text-align: center;
+  color: var(--lotus-bcard-primary, #6c5ce7);
+}
+.lotus-bcard__link-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  overflow: hidden;
+}
+.lotus-bcard__link-label {
+  font-size: 0.75rem;
+  color: var(--lotus-text-muted, #6c757d);
+}
+.lotus-bcard__link-value {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.lotus-bcard__qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block-end: 1.5rem;
+}
+.lotus-bcard__qr-container {
+  display: inline-flex;
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: color-mix(in srgb, var(--lotus-bcard-primary, #6c5ce7) 6%, var(--lotus-card-bg, #fff));
+  border: 1px solid color-mix(in srgb, var(--lotus-bcard-primary, #6c5ce7) 15%, transparent);
+  overflow: hidden;
+}
+.lotus-bcard__qr-caption {
+  font-size: 0.8rem;
+  color: var(--lotus-text-muted, #6c757d);
+  margin: 0;
+  max-width: 220px;
+}
+.lotus-bcard__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+.lotus-bcard__actions .btn-primary {
+  background-color: var(--lotus-bcard-primary, #6c5ce7);
+  border-color: var(--lotus-bcard-primary, #6c5ce7);
+}
+.lotus-bcard__actions .btn-outline-primary {
+  color: var(--lotus-bcard-primary, #6c5ce7);
+  border-color: var(--lotus-bcard-primary, #6c5ce7);
+}
+.lotus-bcard__actions .btn-outline-primary:hover, .lotus-bcard__actions .btn-outline-primary:focus {
+  background-color: var(--lotus-bcard-primary, #6c5ce7);
+  border-color: var(--lotus-bcard-primary, #6c5ce7);
+  color: #fff;
+}
+.lotus-bcard__footer {
+  position: relative;
+  z-index: 1;
+  margin-block-start: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--lotus-text-muted, #6c757d);
+}
+.lotus-bcard__footer a {
+  color: inherit;
+}
+
+html {
+  background: #0f0d1a;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background: transparent;
+}
+
+.lotus-bcard {
+  --lotus-card-bg: #ffffff;
+  --lotus-body-bg: #f7f5ff;
+  --lotus-text-muted: #9891b4;
+  position: relative;
+  color: #1a1228;
+}
+.lotus-bcard::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 45% at 50% 0%, rgba(106, 61, 232, 0.55) 0%, rgba(106, 61, 232, 0) 70%), radial-gradient(ellipse 55% 50% at 0% 85%, rgba(75, 40, 192, 0.45) 0%, rgba(75, 40, 192, 0) 70%), radial-gradient(ellipse 45% 40% at 100% 70%, rgba(155, 126, 248, 0.22) 0%, rgba(155, 126, 248, 0) 70%), linear-gradient(180deg, #1d1440 0%, #0f0d1a 55%, #08070f 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.lotus-bcard__card {
+  border: 1px solid rgba(106, 61, 232, 0.15);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(155, 126, 248, 0.08);
+}
+.lotus-bcard__name {
+  color: #1a1228;
+}
+.lotus-bcard__tagline {
+  color: #5b5478;
+}
+.lotus-bcard__link {
+  border: 1px solid rgba(106, 61, 232, 0.15);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.lotus-bcard__link:hover {
+  background: #ede9fc;
+  border-color: rgba(106, 61, 232, 0.35);
+}
+.lotus-bcard__link-value {
+  color: #1a1228;
+  font-weight: 500;
+}
+.lotus-bcard__qr-container {
+  background: #f7f5ff;
+  border-color: rgba(106, 61, 232, 0.15);
+}
+.lotus-bcard__actions .btn-primary:hover, .lotus-bcard__actions .btn-primary:focus {
+  background-color: #6a3de8;
+  border-color: #6a3de8;
+  opacity: 0.88;
+}
+.lotus-bcard__actions .btn-outline-primary {
+  background-color: #ede9fc;
+  color: #4b28c0;
+  border-color: rgba(106, 61, 232, 0.2);
+}
+.lotus-bcard__actions .btn-outline-primary:hover, .lotus-bcard__actions .btn-outline-primary:focus {
+  background-color: #ddd6fc;
+  color: #4b28c0;
+  border-color: rgba(106, 61, 232, 0.2);
+}
+.lotus-bcard__footer {
+  color: #5b4d8a;
+}
+.lotus-bcard__footer a {
+  color: #9b7ef8;
+  font-weight: 500;
+}
+
+.lotus-bcard-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 1100;
+  transform: translate(-50%, 1rem);
+  max-width: calc(100% - 2rem);
+  padding: 0.6rem 1.2rem;
+  border-radius: 99px;
+  border: 1px solid rgba(155, 126, 248, 0.3);
+  background: #1a1228;
+  color: #fff;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+}
+.lotus-bcard-toast--show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0s;
+}
+.lotus-bcard-toast--error {
+  background: #dc3545;
+}

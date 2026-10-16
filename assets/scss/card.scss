@@ -1,0 +1,154 @@
+// Static-site entry point for the LotusApp public business card (PublicBusinessCard.razor).
+// _business-card.scss is copied unchanged from LotusApp.UI/wwwroot/scss — only page-level base
+// rules and the bottom-center toast (LotusApp's AlertService equivalent) live here.
+//
+// Build: sass assets/scss/card.scss assets/css/card.css --no-source-map
+
+@use 'business-card';
+
+// ── Palette — the exact colors of the original card (D:\MyWebsPage\card\css\style.css) ──
+// The theme vars (--lotus-card-bg/--lotus-body-bg/--lotus-text-muted) are the ones
+// _business-card.scss already reads; everything else is an override layered on top of it.
+$violet: #6a3de8;
+$violet-deep: #4b28c0;
+$violet-light: #ede9fc;
+$violet-mid: #9b7ef8;
+$surface: #ffffff;
+$surface-alt: #f7f5ff;
+$text-primary: #1a1228;
+$text-secondary: #5b5478;
+$text-muted: #9891b4;
+$border: rgba(106, 61, 232, 0.15);
+$page-bg: #0f0d1a;
+
+// Same page color on <html>, so overscroll/rubber-banding never flashes white.
+html {
+    background: $page-bg;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: transparent;
+}
+
+.lotus-bcard {
+    --lotus-card-bg: #{$surface};
+    --lotus-body-bg: #{$surface-alt};
+    --lotus-text-muted: #{$text-muted};
+
+    position: relative;
+    color: $text-primary;
+
+    // Full-viewport mesh gradient built only from the palette above: a bright violet halo behind
+    // the photo, a deep indigo pool lower-left, a faint lavender accent lower-right, all over a
+    // vertical violet-to-near-black base. Fixed, so it stays put while the card scrolls.
+    &::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background:
+            radial-gradient(ellipse 60% 45% at 50% 0%, rgba($violet, 0.55) 0%, rgba($violet, 0) 70%),
+            radial-gradient(ellipse 55% 50% at 0% 85%, rgba($violet-deep, 0.45) 0%, rgba($violet-deep, 0) 70%),
+            radial-gradient(ellipse 45% 40% at 100% 70%, rgba($violet-mid, 0.22) 0%, rgba($violet-mid, 0) 70%),
+            linear-gradient(180deg, #1d1440 0%, $page-bg 55%, #08070f 100%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    &__card {
+        border: 1px solid $border;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(155, 126, 248, 0.08);
+    }
+
+    &__name {
+        color: $text-primary;
+    }
+
+    &__tagline {
+        color: $text-secondary;
+    }
+
+    &__link {
+        border: 1px solid $border;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+
+        &:hover {
+            background: $violet-light;
+            border-color: rgba(106, 61, 232, 0.35);
+        }
+    }
+
+    &__link-value {
+        color: $text-primary;
+        font-weight: 500;
+    }
+
+    &__qr-container {
+        background: $surface-alt;
+        border-color: $border;
+    }
+
+    &__actions {
+        .btn-primary {
+            &:hover,
+            &:focus {
+                background-color: $violet;
+                border-color: $violet;
+                opacity: 0.88;
+            }
+        }
+
+        // The original card's secondary button (light violet fill, deep violet text).
+        .btn-outline-primary {
+            background-color: $violet-light;
+            color: $violet-deep;
+            border-color: rgba(106, 61, 232, 0.2);
+
+            &:hover,
+            &:focus {
+                background-color: #ddd6fc;
+                color: $violet-deep;
+                border-color: rgba(106, 61, 232, 0.2);
+            }
+        }
+    }
+
+    &__footer {
+        color: #5b4d8a;
+
+        a {
+            color: $violet-mid;
+            font-weight: 500;
+        }
+    }
+}
+
+.lotus-bcard-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 1.5rem;
+    z-index: 1100;
+    transform: translate(-50%, 1rem);
+    max-width: calc(100% - 2rem);
+    padding: 0.6rem 1.2rem;
+    border-radius: 99px;
+    border: 1px solid rgba(155, 126, 248, 0.3);
+    background: $text-primary;
+    color: #fff;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+
+    &--show {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0s;
+    }
+
+    &--error {
+        background: #dc3545;
+    }
+}

@@ -1,128 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nima Taghavi</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <meta property="og:type" content="profile" />
-  <meta property="og:title" content="S. Nima Taghavi – Software Architect & Full Stack Developer" />
-  <meta property="og:description" content="Software Architect, Full Stack .NET / Blazor Developer & IT Manager with 20+ years of experience." />
-  <meta property="og:image" content="https://nima-taghavi.com/assets/img/NimaTaghavi.jpg" />
-  <meta property="og:url" content="https://nima-taghavi.com/card" />
-  <meta property="og:site_name" content="Nima Taghavi" />
-  <meta property="profile:first_name" content="Nima" />
-  <meta property="profile:last_name" content="Taghavi" />
+    <title>Nima Taghavi – Digital Business Card</title>
+    <meta name="description" content="Digital business card of Nima Taghavi, Software Architect &amp; Full Stack Developer. Email, LinkedIn, GitHub and website – save the contact in one tap.">
+    <meta name="author" content="Nima Taghavi">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f0d1a">
+    <link rel="canonical" href="https://nima-taghavi.com/card/">
+    <link rel="icon" href="../favicon.ico">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="S. Nima Taghavi – Software Architect & Full Stack Developer" />
-  <meta name="twitter:description" content="Software Architect, Full Stack .NET / Blazor Developer & IT Manager." />
-  <meta name="twitter:image" content="https://nima-taghavi.com/assets/img/NimaTaghavi.jpg" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Nima Taghavi" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://nima-taghavi.com/card/" />
+    <meta property="og:title" content="Nima Taghavi — Software Architect &amp; Full Stack Developer" />
+    <meta property="og:description" content="Digital business card of Nima Taghavi, Software Architect &amp; Full Stack Developer." />
+    <meta property="og:image" content="https://nima-taghavi.com/assets/img/NimaTaghavi.jpg" />
+    <meta property="og:image:width" content="240" />
+    <meta property="og:image:height" content="289" />
+    <meta property="og:image:alt" content="Portrait of Nima Taghavi" />
+    <meta property="profile:first_name" content="Nima" />
+    <meta property="profile:last_name" content="Taghavi" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nima Taghavi — Software Architect &amp; Full Stack Developer" />
+    <meta name="twitter:description" content="Digital business card of Nima Taghavi, Software Architect &amp; Full Stack Developer." />
+    <meta name="twitter:image" content="https://nima-taghavi.com/assets/img/NimaTaghavi.jpg" />
+    <meta name="twitter:image:alt" content="Portrait of Nima Taghavi" />
 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://nima-taghavi.com/card/",
+        "name": "Nima Taghavi – Digital Business Card",
+        "mainEntity": { "@id": "https://nima-taghavi.com/#person", "@type": "Person", "name": "Nima Taghavi", "url": "https://nima-taghavi.com/" }
+    }
+    </script>
 
-  <!-- Card styles -->
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-  <!-- QR Code Styling -->
-  <script src="../assets/js/qr-code-styling.js"></script>
+    <!-- Compiled from ../assets/scss/card.scss -->
+    <link href="../assets/css/card.css" rel="stylesheet">
 </head>
+
 <body>
 
-<main class="card" role="main">
+    <!-- Same markup PublicBusinessCard.razor renders, filled with this site's content. -->
+    <div class="lotus-bcard" style="--lotus-bcard-primary:#6a3de8;--lotus-bcard-bg:#0f0d1a;">
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="avatar-wrap">
-      <img
-        src="https://nima-taghavi.com/assets/img/NimaTaghavi.jpg"
-        alt="Nima Taghavi profile photo"
-        loading="eager"
-      />
-    </div>
-    <div class="hero-name">Nima Taghavi</div>
-    <div class="hero-title">Software Architect &amp; Full Stack Developer</div>
-  </div>
+        <div class="lotus-bcard__card">
 
-  <!-- BODY -->
-  <div class="body">
+            <div class="lotus-bcard__photo-wrap">
+                <img src="../assets/img/NimaTaghavi.jpg" alt="Portrait of Nima Taghavi" width="180" height="180" class="lotus-bcard__photo" />
+            </div>
 
-    <ul class="contact-list">
+            <h1 class="lotus-bcard__name">Nima Taghavi</h1>
+            <p class="lotus-bcard__tagline">Software Architect &amp; Full Stack Developer</p>
 
-      <li onclick="copyEmail()">
-        <span class="ico">
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-        </span>
-        <span class="meta">
-          <span class="label">Email</span>
-          <span class="value">nima.taghavi62@gmail.com</span>
-        </span>
-      </li>
+            <div class="lotus-bcard__links">
+                <a class="lotus-bcard__link" href="mailto:nima.taghavi62@gmail.com">
+                    <i class="bi bi-envelope lotus-bcard__link-icon" aria-hidden="true"></i>
+                    <span class="lotus-bcard__link-text">
+                        <span class="lotus-bcard__link-label">Email</span>
+                        <span class="lotus-bcard__link-value" dir="ltr">nima.taghavi62@gmail.com</span>
+                    </span>
+                </a>
+                <a class="lotus-bcard__link" href="https://www.linkedin.com/in/s-nima-taghavi" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-linkedin lotus-bcard__link-icon" aria-hidden="true"></i>
+                    <span class="lotus-bcard__link-text">
+                        <span class="lotus-bcard__link-label">LinkedIn</span>
+                        <span class="lotus-bcard__link-value" dir="ltr">s-nima-taghavi</span>
+                    </span>
+                </a>
+                <a class="lotus-bcard__link" href="https://github.com/nimataghavi/" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github lotus-bcard__link-icon" aria-hidden="true"></i>
+                    <span class="lotus-bcard__link-text">
+                        <span class="lotus-bcard__link-label">GitHub</span>
+                        <span class="lotus-bcard__link-value" dir="ltr">nimataghavi</span>
+                    </span>
+                </a>
+                <a class="lotus-bcard__link" href="https://nima-taghavi.com" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-globe lotus-bcard__link-icon" aria-hidden="true"></i>
+                    <span class="lotus-bcard__link-text">
+                        <span class="lotus-bcard__link-label">Website</span>
+                        <span class="lotus-bcard__link-value" dir="ltr">https://nima-taghavi.com</span>
+                    </span>
+                </a>
+            </div>
 
-      <li onclick="openLink('https://nima-taghavi.com')">
-        <span class="ico">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </span>
-        <span class="meta">
-          <span class="label">Website</span>
-          <span class="value">nima-taghavi.com</span>
-        </span>
-      </li>
+            <div class="lotus-bcard__qr">
+                <div class="lotus-bcard__qr-container" id="lotus-bcard-qr"></div>
+                <p class="lotus-bcard__qr-caption">Scan to visit website</p>
+            </div>
 
-      <li onclick="openLink('https://www.linkedin.com/in/s-nima-taghavi')">
-        <span class="ico">
-          <svg viewBox="0 0 24 24" class="fill-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </span>
-        <span class="meta">
-          <span class="label">LinkedIn</span>
-          <span class="value">s-nima-taghavi</span>
-        </span>
-      </li>
+            <div class="lotus-bcard__actions">
+                <button class="btn btn-primary" type="button" id="lotus-bcard-save">
+                    <i class="bi bi-download me-1" aria-hidden="true"></i>Save Contact
+                </button>
+                <button class="btn btn-outline-primary" type="button" id="lotus-bcard-share">
+                    <i class="bi bi-share me-1" aria-hidden="true"></i>Share Card
+                </button>
+            </div>
 
-      <li onclick="openLink('https://github.com/nimataghavi/')">
-        <span class="ico">
-          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </span>
-        <span class="meta">
-          <span class="label">GitHub</span>
-          <span class="value">nimataghavi</span>
-        </span>
-      </li>
+        </div>
 
-    </ul>
+        <div class="lotus-bcard__footer">
+            <a href="https://nima-taghavi.com">https://nima-taghavi.com</a>
+            <div>&copy; <span id="lotus-bcard-year"><script>document.write(new Date().getFullYear())</script></span> S. Nima Taghavi</div>
+        </div>
 
-    <hr class="divider" />
-
-    <div class="qr-section">
-      <div id="qr-canvas"></div>
-      <div class="qr-text">
-        <h3>Scan to visit website</h3>
-        <p>Points to nima-taghavi.com — open in any browser</p>
-      </div>
     </div>
 
-    <div class="actions">
-      <button class="btn btn-primary" onclick="downloadVCard()">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Save Contact
-      </button>
-      <button class="btn btn-secondary" onclick="shareCard()">
-        <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        Share Card
-      </button>
-    </div>
+    <div class="lotus-bcard-toast" role="status" aria-live="polite"></div>
 
-  </div>
-</main>
-
-<p class="card-footer">
-  <a href="https://nima-taghavi.com">nima-taghavi.com</a> &nbsp;·&nbsp; © 2025 S. Nima Taghavi
-</p>
-
-<div class="toast" id="toast" role="alert" aria-live="polite"></div>
-
-<script src="js/script.js"></script>
-
+    <script src="../assets/js/qr-code-styling.js"></script>
+    <script src="../assets/js/business-card.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lotus.businessCard.init({
+                qrContainerId: 'lotus-bcard-qr',
+                cardUrl: 'https://nima-taghavi.com/card',
+                primaryColor: '#6a3de8',
+                qrColors: { dots: '#4b28c0', cornersSquare: '#6a3de8', cornersDot: '#9b7ef8', background: '#f7f5ff' },
+                title: 'Nima Taghavi — Software Architect & Full Stack Developer',
+                description: 'Software Architect & Full Stack Developer',
+                vcard: {
+                    fullName: 'Nima Taghavi',
+                    emails: ['nima.taghavi62@gmail.com'],
+                    phones: [],
+                    links: ['https://www.linkedin.com/in/s-nima-taghavi', 'https://github.com/nimataghavi/', 'https://nima-taghavi.com'],
+                    note: 'Software Architect & Full Stack Developer'
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

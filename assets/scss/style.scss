@@ -1,0 +1,41 @@
+// Static-site entry point for the LotusApp "Classic" personal-page template.
+// _personal-page-classic-template.scss is copied unchanged from
+// LotusApp.UI/wwwroot/scss — only page-level base rules live here.
+//
+// Build: sass assets/scss/style.scss assets/css/style.css --no-source-map
+
+@use 'personal-page-classic-template';
+
+// The dark fallback lives on <html> (painted on the canvas, beneath everything) and <body> must stay
+// transparent: .lotus-ppc__bg sits at z-index:-1 in the root stacking context, so any body
+// background (Bootstrap's own white one included) would paint over the hero photo.
+html {
+    background: #040404;
+}
+
+// Lightbox: show the whole photo, scaled to fit the screen (never cropped), whatever its shape.
+.lotus-ppc {
+    .lotus-ppc__lightbox-panel {
+        width: auto;
+        max-width: min(92vw, 1200px);
+    }
+
+    .lotus-ppc__portfolio-lightbox-tile {
+        min-height: 0;
+    }
+
+    .lotus-gallery-lightbox-img {
+        display: block;
+        max-width: 100%;
+        max-height: calc(100vh - 140px);
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+}
+
+body {
+    margin: 0;
+    background: transparent;
+}

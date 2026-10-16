@@ -1,0 +1,204 @@
+// Public digital business-card page (/u/{slug}/card) — see PublicBusinessCard.razor's own
+// top-of-file comment. --lotus-bcard-primary/--lotus-bcard-bg are set per-instance via an inline
+// style on the root element (PublicBusinessCard.razor.cs's CardStyle), sourced from
+// BusinessCardSettings.PrimaryColor/BackgroundColor; the var() fallbacks here only matter if that
+// inline style is ever missing entirely.
+
+.lotus-bcard {
+    --lotus-bcard-primary: #6c5ce7;
+    --lotus-bcard-bg: #fff;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // Increased from 2rem — at the larger photo size introduced in an earlier pass, the negative
+    // pull-up margin on &__photo-wrap (below) had too little headroom above it and pushed the top
+    // of the photo above the viewport's own top edge (visibly "cut off" on page load, not just a
+    // tight crop). More top padding here is real breathing room, not cosmetic.
+    padding-block: 3rem 2rem;
+    padding-inline: 1rem;
+    background: var(--lotus-bcard-bg, #fff);
+
+    &__card {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 420px;
+        margin-block-start: 3rem;
+        background: var(--lotus-card-bg, #fff);
+        border-radius: 16px;
+        padding: 2rem 1.5rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__photo-wrap {
+        // Scaled down alongside &__photo's own 200px -> 180px decrease, AND reduced further
+        // (proportionally more than the size change alone would call for) together with the extra
+        // &padding-block above — the combination is what actually fixes the photo rendering above
+        // the viewport's top edge, not either change alone.
+        margin-block-start: -6rem;
+        margin-block-end: 1rem;
+    }
+
+    &__photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--lotus-card-bg, #fff);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+
+        &--initials {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--lotus-bcard-primary, #6c5ce7);
+            color: #fff;
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+    }
+
+    &__name {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-block-end: 0.25rem;
+    }
+
+    &__tagline {
+        color: var(--lotus-text-muted, #6c757d);
+        margin-block-end: 1.25rem;
+    }
+
+    &__links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-block-end: 1.5rem;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.6rem 0.75rem;
+        border-radius: 8px;
+        background: var(--lotus-body-bg, #f5f6fa);
+        color: inherit;
+        text-decoration: none;
+        transition: background-color 0.15s ease;
+
+        &:hover {
+            background: color-mix(in srgb, var(--lotus-bcard-primary, #6c5ce7) 12%, var(--lotus-body-bg, #f5f6fa));
+        }
+    }
+
+    &__link-icon {
+        flex: 0 0 auto;
+        width: 1.25rem;
+        text-align: center;
+        color: var(--lotus-bcard-primary, #6c5ce7);
+    }
+
+    &__link-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    &__link-label {
+        font-size: 0.75rem;
+        color: var(--lotus-text-muted, #6c757d);
+    }
+
+    &__link-value {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    &__qr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-block-end: 1.5rem;
+    }
+
+    // Rounded card wrapping the QR code itself — border-radius/padding/background match the
+    // reference design's own QR container (design-reference card/css/style.css's .qr-section) as
+    // closely as this app's theme-var-driven palette allows, re-skinned onto --lotus-bcard-primary
+    // instead of the reference's hardcoded violet.
+    &__qr-container {
+        display: inline-flex;
+        border-radius: 12px;
+        padding: 0.75rem;
+        background: color-mix(in srgb, var(--lotus-bcard-primary, #6c5ce7) 6%, var(--lotus-card-bg, #fff));
+        border: 1px solid color-mix(in srgb, var(--lotus-bcard-primary, #6c5ce7) 15%, transparent);
+
+        // qr-code-styling renders its own <canvas>/<svg> directly into this container — rounding the
+        // container and clipping overflow is the only way to round the code's own corners without
+        // reaching into the vendored library's own rendering.
+        overflow: hidden;
+    }
+
+    &__qr-caption {
+        font-size: 0.8rem;
+        color: var(--lotus-text-muted, #6c757d);
+        margin: 0;
+        max-width: 220px;
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+
+        // Save Contact / Share Card use this card's own resolved --lotus-bcard-primary (the
+        // BusinessCardSettings.PrimaryColor override, or the template default per
+        // PersonalPageTemplateExtensions.GetDefaultPrimaryColor when unset — see CardStyle in the
+        // code-behind) instead of Bootstrap's own site-wide .btn-primary color, which could differ
+        // from the card's own accent.
+        .btn-primary {
+            background-color: var(--lotus-bcard-primary, #6c5ce7);
+            border-color: var(--lotus-bcard-primary, #6c5ce7);
+        }
+
+        .btn-outline-primary {
+            color: var(--lotus-bcard-primary, #6c5ce7);
+            border-color: var(--lotus-bcard-primary, #6c5ce7);
+
+            &:hover,
+            &:focus {
+                background-color: var(--lotus-bcard-primary, #6c5ce7);
+                border-color: var(--lotus-bcard-primary, #6c5ce7);
+                color: #fff;
+            }
+        }
+    }
+
+    &__footer {
+        position: relative;
+        z-index: 1;
+        margin-block-start: 1.5rem;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--lotus-text-muted, #6c757d);
+
+        a {
+            color: inherit;
+        }
+    }
+}
