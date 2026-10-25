@@ -225,6 +225,45 @@ body {
   color: #9b7ef8;
   font-weight: 500;
 }
+.lotus-bcard__install {
+  flex: 1 1 100%;
+  background-color: transparent;
+  color: #4b28c0;
+  border: 1px solid rgba(106, 61, 232, 0.35);
+}
+.lotus-bcard__install:hover, .lotus-bcard__install:focus {
+  background-color: #ede9fc;
+  color: #4b28c0;
+  border-color: rgba(106, 61, 232, 0.5);
+}
+.lotus-bcard__install[hidden] {
+  display: none;
+}
+.lotus-bcard__ios-hint {
+  margin: 0.85rem 0 0;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  background: #f7f5ff;
+  color: #5b5478;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.lotus-bcard__ios-hint strong {
+  color: #1a1228;
+  font-weight: 600;
+}
+.lotus-bcard__ios-hint i {
+  color: #6a3de8;
+}
+.lotus-bcard__ios-hint[hidden] {
+  display: none;
+}
+@supports (padding: max(0px)) {
+  .lotus-bcard {
+    padding-top: max(3rem, env(safe-area-inset-top) + 2rem);
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+}
 
 .lotus-bcard-toast {
   position: fixed;

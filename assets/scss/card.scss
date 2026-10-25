@@ -122,6 +122,55 @@ body {
             font-weight: 500;
         }
     }
+
+    // ── Add to Home Screen ── full-width button under Save/Share, only shown where installing works.
+    &__install {
+        flex: 1 1 100%;
+        background-color: transparent;
+        color: $violet-deep;
+        border: 1px solid rgba(106, 61, 232, 0.35);
+
+        &:hover,
+        &:focus {
+            background-color: $violet-light;
+            color: $violet-deep;
+            border-color: rgba(106, 61, 232, 0.5);
+        }
+
+        &[hidden] {
+            display: none;
+        }
+    }
+
+    // iPhone/iPad: Safari's own steps, revealed by the install button.
+    &__ios-hint {
+        margin: 0.85rem 0 0;
+        padding: 0.6rem 0.9rem;
+        border-radius: 10px;
+        background: $surface-alt;
+        color: $text-secondary;
+        font-size: 0.85rem;
+        line-height: 1.6;
+
+        strong {
+            color: $text-primary;
+            font-weight: 600;
+        }
+
+        i {
+            color: $violet;
+        }
+
+        &[hidden] {
+            display: none;
+        }
+    }
+
+    // Installed as an app: keep clear of the iPhone notch and home bar.
+    @supports (padding: max(0px)) {
+        padding-top: max(3rem, calc(env(safe-area-inset-top) + 2rem));
+        padding-bottom: max(2rem, env(safe-area-inset-bottom));
+    }
 }
 
 .lotus-bcard-toast {

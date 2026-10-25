@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
 
     <title>Nima Taghavi – Digital Business Card</title>
     <meta name="description" content="Digital business card of Nima Taghavi, Software Architect &amp; Full Stack Developer. Email, LinkedIn, GitHub and website – save the contact in one tap.">
@@ -12,6 +12,14 @@
     <meta name="theme-color" content="#0f0d1a">
     <link rel="canonical" href="https://nima-taghavi.com/card/">
     <link rel="icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+
+    <!-- Add to Home Screen: opens full screen like an app (manifest for Android/Chrome, meta tags for iPhone) -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Nima Taghavi">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Nima Taghavi" />
@@ -109,7 +117,15 @@
                 <button class="btn btn-outline-primary" type="button" id="lotus-bcard-share">
                     <i class="bi bi-share me-1" aria-hidden="true"></i>Share Card
                 </button>
+                <!-- shown only where installing is possible and the card isn't installed yet -->
+                <button class="btn lotus-bcard__install" type="button" id="lotus-bcard-install" hidden>
+                    <i class="bi bi-phone me-1" aria-hidden="true"></i>Add to Home Screen
+                </button>
             </div>
+            <p class="lotus-bcard__ios-hint" id="lotus-bcard-ios-hint" hidden>
+                In Safari, tap <strong>Share</strong> <i class="bi bi-box-arrow-up" role="img" aria-label="the Share icon"></i>
+                then <strong>Add to Home Screen</strong>.
+            </p>
 
         </div>
 

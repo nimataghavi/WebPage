@@ -113,6 +113,49 @@ window.lotus.businessCard = (() => {
             if (result === 'copied') toast('Link copied — share it anywhere!');
             else if (result === 'copyFailed') toast("Couldn't copy the link. Please copy it from the address bar instead.", true);
         });
+
+        setupInstall();
+    };
+
+    // ── Add to Home Screen ──
+    // Android/Chrome hands the page an install prompt that our button can trigger. iPhone/iPad
+    // can't be triggered by a website, so there the button reveals Safari's own steps instead.
+    const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+    const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    let installPrompt = null;
+
+    const showInstall = (show) => {
+        const btn = document.getElementById('lotus-bcard-install');
+        if (btn) btn.hidden = !show || isStandalone();
+    };
+
+    // Can fire before init runs, so listen as soon as this script loads.
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault(); // use our button instead of Chrome's own banner
+        installPrompt = e;
+        showInstall(true);
+    });
+    window.addEventListener('appinstalled', () => {
+        installPrompt = null;
+        showInstall(false);
+        toast('Added to your home screen.');
+    });
+
+    const setupInstall = () => {
+        const btn = document.getElementById('lotus-bcard-install');
+        const hint = document.getElementById('lotus-bcard-ios-hint');
+        if (!btn) return;
+        showInstall(!!installPrompt || isIOS);
+        btn.addEventListener('click', async () => {
+            if (installPrompt) {
+                installPrompt.prompt();
+                await installPrompt.userChoice.catch(() => {});
+                installPrompt = null;
+                showInstall(false);
+            } else if (hint) {
+                hint.hidden = !hint.hidden;
+            }
+        });
     };
 
     return { init };
